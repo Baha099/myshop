@@ -45,10 +45,7 @@
   </div>
 
   <div class="form">
-    <h3>Оформить заказ</h3>
     <form id="orderForm">
-      <input type="text" name="name" placeholder="Имя" required><br>
-      <input type="text" name="phone" placeholder="Телефон" required><br>
       <button type="submit">Отправить заказ в WhatsApp</button>
     </form>
   </div>
@@ -82,13 +79,7 @@
         alert("Корзина пуста!");
         return;
       }
-
-      let name = this.name.value;
-      let phone = this.phone.value;
-
       let orderText = "🛒 Новый заказ!\n\n";
-      orderText += "Имя: " + name + "\n";
-      orderText += "Телефон: " + phone + "\n";
       cart.forEach(item => {
         orderText += "- " + item.name + " (" + item.price + " сом)\n";
       });
