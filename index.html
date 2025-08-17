@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Магазин с WhatsApp заказом</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    .product { border: 1px solid #a8a5a5; padding: 10px; margin-bottom: 10px; }
-    .cart { margin-top: 20px; padding: 10px; border: 1px solid #666; }
-    .form { margin-top: 20px; }
-    input, button { margin: 5px 0; padding: 8px; width: 250px; }
-    button { cursor: pointer; background: #25D366; color: #fff; border: none; border-radius: 5px; }
-    button:hover { background: #1ebe5d; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Магазин в WhatsApp</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .product { border: 1px solid #e4e4e4; padding: 10px; margin-bottom: 20px; }
+        .cart { margin-top: 20px; padding: 10px; border: 1px solid #e4e4e4; }
+        .form { margin-top: 20px; }
+        input, button { margin: 5px 0; padding: 8px; width: 250px; }
+        button { cursor: pointer; background: #25d366; color: #fff; border: none; border-radius: 5px; }
+        button:hover { background: #1ebe5d; }
+    </style>
 </head>
 <body>
 
-  <h1>Магазин Гуля</h1>
+<h1>Магазин Гуля</h1>
 
-  <div class="product">
+<div class="product">
     <h3>Брюки мужские льняные синие</h3>
-    <img src="images.tovar1.jpg"alt="Тавар 1"
-        width="200">
+    <img src="images.tovar1.jpg" alt="Товар 1" width="200">
     <p>Цена: 1000 сом</p>
     <label for="size1">Размер:</label>
     <select id="size1">
@@ -29,74 +28,28 @@
         <option>L</option>
         <option>XL</option>
     </select>
-    <button onclick="addToCart('Брюки мужские льняные синие', 1000)">Добавить в корзину</button>
-  </div>
+    <button onclick="addToCart('Брюки мужские льняные синие', 1000, document.getElementById('size1').value)">Добавить в корзину</button>
+</div>
 
-  <div class="product">
+<div class="product">
     <h3>Товар 2</h3>
-    <p>Цена: 1000 сом</p>
-    <button onclick="addToCart('Товар 2', 300)">Добавить в корзину</button>
-  </div>
+    <p>Цена: 300 сом</p>
+    <button onclick="addToCart('Товар 2', 300, 'Без размера')">Добавить в корзину</button>
+</div>
 
-  <div class="cart">
+<div class="cart">
     <h3>Корзина</h3>
     <ul id="cart-list"></ul>
     <p>Итого: <span id="total">0</span> сом</p>
-  </div>
+</div>
 
-  <div class="form">
+<div class="form">
     <form id="orderForm">
-      <button type="submit">Отправить заказ в WhatsApp</button>
+        <button type="submit">Отправить заказ в WhatsApp</button>
     </form>
-  </div>
+</div>
 
-  <script>
-    let cart = [];
-
-    function addToCart(name, price) {
-      cart.push({name, price});
-      updateCart();
-    }
-
-    function updateCart() {
-      const list = document.getElementById("cart-list");
-      const total = document.getElementById("total");
-      list.innerHTML = "";
-      let sum = 0;
-      cart.forEach(item => {
-        let li = document.createElement("li");
-        li.textContent = item.name + " - " + item.price + " сом";
-        list.appendChild(li);
-        sum += item.price;
-      });
-      total.textContent = sum;
-    }
-
-    document.getElementById("orderForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      if (cart.length === 0) {
-        alert("Корзина пуста!");
-        return;
-      }
-      let orderText = "🛒 Новый заказ!\n\n";
-      cart.forEach(item => {
-        orderText += "- " + item.name + " (" + item.price + " сом)\n";
-      });
-      orderText += "\nИтого: " + document.getElementById("total").textContent + " сом";
-
-      // 📌 Укажи здесь свой номер телефона (без +)
-      let whatsappNumber = "996507011527";  
-
-      let url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(orderText);
-      window.open(url, "_blank");
-
-      this.reset();
-      cart = [];
-      updateCart();
-    });
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
 
