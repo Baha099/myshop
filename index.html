@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -29,7 +29,7 @@
         <option>L</option>
         <option>XL</option>
     </select>
-    <button onclick="addToCart('Брюки мужские льняные синие', 1000)">Добавить в корзину</button>
+    <button onclick="addToCart('Брюки мужские льняные синие', )">Добавить в корзину</button>
   </div>
 
   <div class="product">
@@ -90,7 +90,6 @@
       let orderText = "🛒 Новый заказ!\n\n";
       orderText += "Имя: " + name + "\n";
       orderText += "Телефон: " + phone + "\n";
-      orderText += "Адрес: " + address + "\n\n";
       orderText += "Товары:\n";
       cart.forEach(item => {
         orderText += "- " + item.name + " (" + item.price + " сом)\n";
@@ -111,6 +110,7 @@
 
 </body>
 </html>
+
 
 
 
