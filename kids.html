@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин Гуля — Детям</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="index.html">Магазин Гуля</a>
+    <nav class="nav">
+      <a href="index.html" class="nav__link">Мужчинам</a>
+      <a href="women.html" class="nav__link">Женщинам</a>
+      <a href="kids.html" class="nav__link nav__link--active">Детям</a>
+      <a href="cart.html" class="nav__link nav__cart">🛒 <span id="cart-count">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="page-title">Детская одежда</h1>
+  <div class="grid">
+    <article class="card">
+      <img class="card__img" src="детский_спортика.jpg" alt="Футболка детская">
+      <div class="card__body">
+        <h3 class="card__title">Футболка детская</h3>
+        <p class="card__price" data-price>700 сом</p>
+        <div class="card__controls">
+          <label class="field"><span>Размер</span>
+            <select id="k1-size" class="select">
+              <option>104</option><option selected>110</option><option>116</option><option>122</option>
+            </select>
+          </label>
+          <button onclick="addToCart('Футболка детская', 700, 'k1-size')" class="btn">В корзину</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+

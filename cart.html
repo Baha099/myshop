@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина — Магазин Гуля</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="index.html">Магазин Гуля</a>
+    <nav class="nav">
+      <a href="index.html" class="nav__link">Мужчинам</a>
+      <a href="women.html" class="nav__link">Женщинам</a>
+      <a href="kids.html" class="nav__link">Детям</a>
+      <a href="cart.html" class="nav__link nav__link--active">🛒 <span id="cart-count">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="page-title">Ваша корзина</h1>
+  <ul id="cart-items" class="cart-list"></ul>
+  <p id="total-price" class="cart-total">Итого: 0 сом</p>
+  <a id="whatsapp-order" href="#" target="_blank" class="btn btn--order">Заказать через WhatsApp</a>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
